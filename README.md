@@ -1,2 +1,2 @@
 # TheResiduals
-Information Visualization 
+Information Visualization Group project
