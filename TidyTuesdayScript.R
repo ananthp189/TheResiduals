@@ -7,6 +7,7 @@ library(tidyverse)
 library(here)
 library(ggplot2)
 library(plotly)
+library(data.table)
 
 # Cleaning script (by TidyTuesday)
 clean_hike_data <- hike_data %>% 
@@ -31,7 +32,9 @@ saveRDS(clean_hike_data, "clean_hike_data.rds")
 reupload_data <- readRDS("clean_hike_data.rds")
 
 # Save file as csv, this puts features into string
-fwrite(clean_hike_data, file ="myDT.csv")
+fwrite(clean_hike_data, file ="clean_hike_data.csv")
+# Restore csv under a different name
+reupload_csv <- read.csv("clean_hike_data.csv")
 
 # Extracting all features of the data
 unique(unlist(clean_hike_data$features))
